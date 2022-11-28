@@ -11,7 +11,7 @@ function installChaincode() {
     peer lifecycle chaincode install ${CC_NAME}.tar.gz >&log.txt
     res=$?
   fi
-  { set +x; } 2>/dev/null
+  { set +x;f } 2>/dev/null
   cat log.txt
   verifyResult $res "Chaincode installation on peer0.org${ORG} has failed"
   successln "Chaincode is installed on peer0.org${ORG}"
